@@ -76,7 +76,7 @@ const LugaresPraga = ({
 
         {linkFiesta && linkFiesta.trim() !== "" && (
           <div className="flex flex-col items-center gap-3 max-w-xs">
-            <h3 className="hidden md:block text-xl">01 de Noviembre</h3>
+            <h3 className="text-xl">13 de Febrero</h3>
             <div style={{ width: 120, height: 120 }}>
               <Lottie
                 loop

@@ -2,8 +2,26 @@ import { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+
+
 const Countdown = ( {containerClasses, targetDate} ) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  function calculateTimeLeft() {
+    const now = new Date();
+    const difference = targetDate - now;
+
+    if (difference > 0) {
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / (1000 * 60)) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    }
+
+    return null;
+  }
 
   useEffect(() => {
     AOS.init({
@@ -22,21 +40,7 @@ const Countdown = ( {containerClasses, targetDate} ) => {
     return () => clearInterval(timer);
   }, [timeLeft]);
 
-  function calculateTimeLeft() {
-    const now = new Date();
-    const difference = targetDate - now;
 
-    if (difference > 0) {
-      return {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / (1000 * 60)) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    }
-
-    return null;
-  }
 
   if (!timeLeft) {
     return (
