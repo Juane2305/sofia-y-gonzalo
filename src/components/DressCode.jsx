@@ -20,6 +20,12 @@ const DressCode = ({dress_code}) => {
         <h3 className='text-gray-950 text-4xl text-center px-5 md:px-0 font-light tracking-widest' data-aos= 'fade-up'>Código de Vestimenta</h3>
         <img src={dressCode} alt="regalo" className="w-56 pt-10" data-aos= 'fade-up'/>
         <p className='uppercase text-xl font-light text-gray-700' data-aos= 'fade-up'>{dress_code}</p>
+        <p
+            className="text-center text-gray-700 mt-4 font-montserrat text-lg px-6"
+            data-aos="fade-up"
+          >
+            Por favor, evitar vestir de color <span className="font-semibold">verde</span>.
+          </p>
     </div>
   )
 }

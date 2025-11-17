@@ -11,11 +11,11 @@ export const Modal = ({
   cbu,
   banco,
   nombre,
-  moneda_extranjera,
-  tipo_cuenta,
-  numero_cuenta,
-  titular_extranjera,
-  banco_extranjera,
+  // moneda_extranjera,
+  // tipo_cuenta,
+  // numero_cuenta,
+  // titular_extranjera,
+  // banco_extranjera,
   styleBotonModal,
   styleModal,
   styleBorderModal,
@@ -49,18 +49,23 @@ export const Modal = ({
         data-aos='fade-up'
         onClick={() => setIsOpen(true)}
       >
-        Ver Datos Bancarios
+        Ver más
       </button>
 
       {isOpen && (
         <div className={`fixed inset-0 bg-black/40  backdrop-blur-md flex justify-center items-center z-50`} style={styleModal}>
           <div className={`bg-white p-10 rounded-lg flex flex-col justify-center items-center border-2 ${borderModal}`} style={styleBorderModal}>
             <div className="flex flex-col justify-center text-center space-y-7 text-gray-900 w-full max-w-md ">
-              <h2 className="font-bold text-2xl cursor-default">Datos Bancarios</h2>
-              {moneda_extranjera && moneda_extranjera.trim() !== "" && (
-              <h3 className="text-xl font-semibold mb-4">Datos en Pesos</h3>
-              )}
+              <h2 className="font-bold text-2xl cursor-default">Valor de la Tarjeta</h2>
+
+              <p className="text-4xl font-bold text-[#ce8045] mt-2 mb-6">$80.000</p>
+
+              <hr className="border-t-2 border-gray-300 w-full my-4" />
+
+              <h3 className="text-xl font-semibold mb-4 text-center">Datos Bancarios</h3>
+
               <div className="w-full space-y-4 text-left text-gray-800">
+
                 <p className="text-lg flex justify-between items-center">
                   <span><span className="font-semibold">Nombre del titular:</span> {nombre}</span>
                 </p>
@@ -82,29 +87,8 @@ export const Modal = ({
                 <p className="text-lg flex justify-between items-center">
                   <span><span className="font-semibold">Banco:</span> {banco}</span>
                 </p>
+
               </div>
-              {moneda_extranjera && moneda_extranjera.trim() !== "" && (
-                <div className="w-full mt-8">
-                  <hr className="border-t-2 border-gray-300 mb-4" />
-                  <h3 className="text-xl font-semibold mb-4">Datos en {moneda_extranjera}</h3>
-                  <div className="text-left space-y-4 text-gray-800">
-                    <p className="text-lg flex justify-between items-center">
-                      <span><span className="font-semibold">{tipo_cuenta}: </span>{numero_cuenta}</span>
-                      <button onClick={() => copiarTexto(numero_cuenta)}>
-                        <IoCopyOutline style={styleTextColor} className="ml-2" />
-                      </button>
-                    </p>
-
-                    <p className="text-lg flex justify-between items-center">
-                      <span><span className="font-semibold">Titular:</span> {titular_extranjera}</span>
-                    </p>
-
-                    <p className="text-lg flex justify-between items-center">
-                      <span><span className="font-semibold">Banco:</span> {banco_extranjera}</span>
-                    </p>
-                  </div>
-                </div>
-              )}
 
               <button
                 className={`py-4 rounded-lg font-bold hover:bg-transparent hover:transition cursor-pointer border-2 border-[#f0b17e] transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg`} style={claseBotonModal}

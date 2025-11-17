@@ -56,6 +56,15 @@ const Invitacion = () => {
         </div>
       </div>
       <div>
+        <div
+          data-aos="fade-up"
+          className="w-full text-center px-8 md:px-20 py-10 font-montserrat"
+        >
+          <p className="text-lg md:text-2xl text-gray-700 leading-relaxed italic">
+            Nuestro amor nació de lo simple, se fortaleció con el tiempo y hoy florece
+            en esta nueva etapa que queremos compartir con ustedes.
+          </p>
+        </div>
         <section
           id="contador"
           className="bg-beige w-full flex flex-col items-center justify-center gap-y-5 py-10 font-thin"
@@ -202,8 +211,7 @@ const Invitacion = () => {
         </div>
         {/* <InstagramWall user="@chechu.guido" /> */}
         <DatosBancarios
-          texto="Tu presencia es nuestro mejor regalo, pero si de todas formas querés hacer un regalo, te dejamos nuestros datos bancarios."
-          texto2="Si lo deseás y podés, se abona por adulto $20.000 el cubierto, dentro de un sobre y completamente anónimo ( se entrega en el salón )"
+          texto="Aquí podés ver el valor de la tarjeta y los datos bancarios para realizar la transferencia."
           claseContenedor=" text-white font-montserrat"
           claseBoton="border-2 border-blue-900 bg-white py-3 px-6 text-gray-800 rounded-full hover:bg-gray-100 hover:text-gray-800 transform transition-transform duration-300 ease-in-out"
           textSize="text-lg"
